@@ -1,0 +1,32 @@
+* {
+  margin: 0px;
+}
+
+header {
+  margin: 0;
+  text-align: center;
+  background-color: aqua;
+}
+
+#form-container {
+  background-color: antiquewhite;
+  text-align: center;
+}
+
+.books {
+  background-color: antiquewhite;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+#input {
+  width: 30%;
+  margin: 0 35% 0 35%;
+}
+
+#input label {
+  float: right;
+}
