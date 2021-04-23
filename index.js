@@ -47,7 +47,7 @@ function addBookToLibrary() {
     else{
         myLibrary.push(new Book(author, title, pages, read))
         books()
-        console.log("Book added")
+
     }
 
     document.getElementById("author").value = ""
@@ -61,7 +61,7 @@ function addBookToLibrary() {
 
 const books = () => {
     var book_list = myLibrary.map((book, index) => {
-        return(`<li id="${index}">${book.author}<br>${book.title}<br>${book.pages} pages<br>${book.read ? "Read": "Not Read"}</li><button  onclick="deleteBook(${index})" >Delete</button> <button  onclick="readStatus(${index})" >Mark as ${!book.read ? "Read": "Not Read"}</button><br>`)
+        return(`<li id="${index}">${book.author}<br>${book.title}<br>${book.pages} pages<br>${book.read ? "Read": "Not Read"}</li><button style="background-color: #ff3333;" onclick="deleteBook(${index})" >Delete</button> <button  onclick="readStatus(${index})" style="background-color: ${book.read ? "#00ff00": "#ff3333"}" >Mark as ${!book.read ? "Read": "Not Read"}</button><br>`)
     }).join("");
     document.getElementById("book_list").innerHTML = book_list;
 
@@ -71,15 +71,22 @@ const showForm = () =>{
     const form = document.getElementById("input");
     if (form.style.display === "none") {
         form.style.display = "block";
+        changeButton("Hide Form")
     }
     else{
-        form.style.display = "none"
+        form.style.display = "none";
+        changeButton("Show Form")
     }
 }
 
+const changeButton = (status)=>{
+    let buttonColor = document.getElementById("show-form");
+    status === "Show Form"? buttonColor.style.backgroundColor = "#00ff00": buttonColor.style.backgroundColor = "#ff3333"
+    
+    document.getElementById("show-form").innerHTML = status
+}
 
 const deleteBook = (index)=>{
-    console.log(`deleted index ${index}`)
     delete myLibrary[index]
     myLibrary.sort()
     myLibrary.pop()
@@ -87,8 +94,6 @@ const deleteBook = (index)=>{
 }
 
 const readStatus = (index) =>{
-    console.log()
     myLibrary[index]["read"] = !myLibrary[index]["read"]
-    console.log(myLibrary[index]["read"], !myLibrary[index]["read"])
     books()
 }

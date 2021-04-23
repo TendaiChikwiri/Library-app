@@ -13,21 +13,25 @@
     </header>
 
     <div id="form-container">
-        <button onclick="showForm()" >Add Book</button>
+        <button id="show-form" onclick="showForm()" >Add Book</button>
         <form id="input">
-            <label for="author">Author
-                <input required id="author" type="text">
-            </label><br>
-            <label for="">Title
-                <input required id="title" type="text">
-            </label><br>
-            <label for="author">Pages
-                <input required id="pages" type="text">
-            </label><br>
-            <label for="author">Read
-                <input id="read" type="checkbox">
-            </label><br>
-            <button type="button" onclick="addBookToLibrary()">Submit Book</button>
+            <div class="input-field">
+                <label for="author">Author
+                    </label><input class="text-box" required id="author" type="text">
+            </div>
+            <div class="input-field">
+                <label for="">Title
+                    </label><input class="text-box" required id="title" type="text">
+            </div>
+            <div class="input-field">
+                <label for="author">Pages
+                    </label><input class="text-box" required id="pages" type="text">
+            </div>
+            <div class="input-field">
+                <label for="author">Read
+                    </label><input id="read" type="checkbox">
+            </div>
+            <button class="submit-button" type="button" onclick="addBookToLibrary()">Submit Book</button>
         </form>
     </div>
 
