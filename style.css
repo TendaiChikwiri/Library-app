@@ -2,7 +2,7 @@
 
 * {
   padding: 0;
-  margin: 0px;
+  margin: 0;
   background-color: rgb(252, 221, 181);
   font-family: "Roboto", sans-serif;
 }
@@ -22,13 +22,11 @@ button {
   background-color: #00ff00;
 }
 
-input {
+input[type="text"] {
   outline: none;
   padding: 5px;
-  border-style: solid;
-  border-width: 2px;
+  border: 2px solid black;
   border-radius: 15px;
-  border-color: black;
 }
 
 header {
@@ -37,12 +35,14 @@ header {
 }
 
 #form-container {
-  margin: 2rem;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
 }
 
 .books-container {
+  display: flex;
+  flex-direction: column;
   width: 70%;
   margin: auto;
 }
@@ -59,13 +59,13 @@ li {
 }
 
 #input {
-  width: 30%;
-  margin: 0 35% 0 35%;
+  width: 40%;
+  margin: auto;
 }
 
 .input-field {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   margin: 0.5rem;
 }
@@ -76,10 +76,13 @@ li {
 }
 
 #show-form {
+  font-size: larger;
   transition: all 0.5s;
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin: 1rem;
+  margin: auto;
+  padding: 0.5rem;
 }
 
 .delete-button {
@@ -95,7 +98,7 @@ li {
   grid-template-columns: 75% 25%;
   box-shadow: 0 0.25rem 1rem gray;
   /* border: 1px solid black; */
-  margin: 1rem 0;
+  margin-top: 1rem;
   padding: 1rem;
 }
 
@@ -122,5 +125,39 @@ li {
 }
 
 .delete-btn {
-  padding: 0.25rem;
+  padding: 0.15rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .books-container {
+    padding: 1rem 0;
+    width: 90%;
+    margin: auto;
+  }
+
+  .input-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0.5rem;
+  }
+
+  .input-field input {
+    margin-left: 0;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+
+  .book {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .books-buttons button {
+    margin: 0.2rem 0;
+  }
 }

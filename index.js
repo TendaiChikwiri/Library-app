@@ -66,7 +66,7 @@ const books = () => {
                     <span style="height: 0.5rem" class="material-icons">delete_forever<span>
                 </button>
                 <button  class="read-toggle" onclick="readStatus(${index})" style="background-color: ${
-        book.read ? "#00ff00" : "#ff3333"
+        book.read ? "#ff3333" : "#00ff00"
       }" >Mark as ${!book.read ? "Read" : "Not Read"}</button>
             </div>
         </li>`;
