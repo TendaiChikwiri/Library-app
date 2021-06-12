@@ -1,22 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 * {
+  padding: 0;
   margin: 0px;
-  background-color: rgb(252, 221, 181)
+  background-color: rgb(252, 221, 181);
+  font-family: "Roboto", sans-serif;
 }
 
-button{
-  padding: 5px;
+button {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.5rem;
   border: none;
   border-radius: 15px;
 }
 
-.submit-button{
+.submit-button {
   padding: 5px;
   border: none;
   border-radius: 15px;
   background-color: #00ff00;
 }
 
-input{
+input {
   outline: none;
   padding: 5px;
   border-style: solid;
@@ -36,11 +42,17 @@ header {
   place-items: center;
 }
 
-.books {
+.books-container {
+  width: 70%;
+  margin: auto;
+}
+
+.books-container > h2 {
   text-align: center;
 }
 
-li { padding: 5px;
+li {
+  padding: 5px;
   border: none;
   border-radius: 15px;
   list-style: none;
@@ -51,24 +63,64 @@ li { padding: 5px;
   margin: 0 35% 0 35%;
 }
 
-.input-field{
+.input-field {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin: 0.5rem;
 }
 
-.input-field label{
+.input-field label {
   margin-left: 0;
   margin-right: auto;
 }
 
-
-#show-form{
+#show-form {
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
   margin: 1rem;
 }
 
-.delete-button{
+.delete-button {
   background-color: #ff3333;
 }
 
+.book-list {
+}
+
+.book {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 75% 25%;
+  box-shadow: 0 0.25rem 1rem gray;
+  /* border: 1px solid black; */
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.title,
+.author,
+.pages,
+.book-read {
+  margin: 0.2rem 0;
+}
+
+.books-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.material-icons {
+  background: none;
+}
+
+.delete-btn {
+  padding: 0.25rem;
+}
